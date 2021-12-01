@@ -1,29 +1,45 @@
 <template>
   <div id="app">
     <Myheader @sceltaFilm="cambioFilm"/>
-    <Main :titFilm="titFilm"/>
+    <MyMain :titFilm="titFilm"/>
   </div>
 </template>
 
 <script>
 import Myheader from './components/Myheader.vue'
-import Main from './components/Main.vue'
+import MyMain from '@/components/MyMain.vue'
+import axios from "axios"
 
 export default {
   name: 'App',
   components: {
     Myheader,
-    Main
+    MyMain
   },
   data(){
     return {
-      titFilm: ""
+      titFilm: "",
+      apiUrl: "https://api.themoviedb.org/3/search/movie?api_key=9be0976a76aebe54d69d16966b3bea75&query=",
+      elencoFilm: []
     }
+  },
+
+   created(){
+    this.schedaFilm()
   },
 
   methods: {
       cambioFilm(film) {
       this.titFilm = film;
+    },
+
+    schedaFilm(){
+      axios
+        .get(this.apiUrl + this.titFilm)
+        .then((result) => {
+        this.elencoFilm = result.data.results
+        console.log(result);
+      })
     }
   }
 }
