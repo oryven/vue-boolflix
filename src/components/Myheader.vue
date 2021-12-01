@@ -3,13 +3,14 @@
       <h1>BOOLFLIX</h1>
       <div>
         <input type="text" placeholder="Cerca un film"  v-model="testoUtente">
-        <button @click="$emit('changeFilm', testoUtente)">Cerca</button>
+        <button @click="$emit('sceltaFilm', testoUtente)">Cerca</button>
       </div>
       
   </header>
 </template>
 
 <script>
+
 export default {
   name: 'Myheader',
   props: {
@@ -17,10 +18,9 @@ export default {
   },
   data (){
     return {
-        testoUtente: ""
+        testoUtente: "",
     }   
-  },
-
+  }
 }
 </script>
 

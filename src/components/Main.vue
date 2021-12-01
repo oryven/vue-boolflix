@@ -5,11 +5,35 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: 'Main',
   props: {
-    msg: String
-  }
+   
+  },
+  data (){
+    return {
+        testoUtente: "",
+        apiUrl: "https://api.themoviedb.org/3/search/movie?api_key=9be0976a76aebe54d69d16966b3bea75&query=" ,
+        elencoFilm: []
+    }   
+  },
+
+  created(){
+    this.schedaFilm()
+  },
+  methods: {
+      schedaFilm(){
+          axios
+          .get(this.apiUrl)
+          .then((result) => {
+              this.elencoFilm = result.data.results
+              console.log(result);
+          })
+        }
+    }
+
 }
 </script>
 

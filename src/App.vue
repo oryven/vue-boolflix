@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <Myheader />
-    <Main/>
+    <Myheader @sceltaFilm="cambioFilm"/>
+    <Main :titFilm="titFilm"/>
   </div>
 </template>
 
@@ -14,6 +14,17 @@ export default {
   components: {
     Myheader,
     Main
+  },
+  data(){
+    return {
+      titFilm: ""
+    }
+  },
+
+  methods: {
+      cambioFilm(film) {
+      this.titFilm = film;
+    }
   }
 }
 </script>
