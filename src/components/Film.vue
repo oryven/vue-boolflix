@@ -1,12 +1,14 @@
 <template>
   <section>
-    <div>{{details.title}}</div>
 
-    <div>{{details.original_title}}</div>
+      <div class="scheda-film">
+        <div>{{details.original_title}}</div>
 
-    <div>{{details.original_language}}</div>
+        <div>{{details.original_language}}</div>
 
-    <div>{{details.vote_average}}</div>
+        <div>{{details.vote_average}}</div>
+      </div>
+    
   </section>
 </template>
 
@@ -15,7 +17,7 @@
 export default {
   name: 'Film',
   props: {
-   film: Object
+   details: Object
   },
   data (){
     return {
@@ -29,9 +31,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-section{
-    background-color: lightgray;
-    height: 100vh;
+section {
+    height: 50px;
 }
 
 </style>

@@ -1,12 +1,11 @@
 <template>
-  <section>
 
-    <film>v-for="film, i in elencoFilm" 
+  <div class="movies">
+    <Film v-for="film, i in elencoFilm" 
     :key="i"
-    :details="film"
-    </film>
-
-  </section>
+    :details="film"/>
+  </div>
+    
 </template>
 
 <script>
@@ -31,9 +30,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-section{
-    background-color: lightgray;
-    height: 100vh;
-}
+.movies {
+  display: flex;
+  flex-wrap:wrap ;
+        height: 100vh;
+        background-color: lightgray;
+    }
 
 </style>

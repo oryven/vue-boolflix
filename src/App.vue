@@ -19,7 +19,7 @@ export default {
   data(){
     return {
       titFilm: "",
-      apiUrl: "https://api.themoviedb.org/3/search/movie?api_key=9be0976a76aebe54d69d16966b3bea75&query=",
+      apiUrl: "https://api.themoviedb.org/3/search/movie?api_key=9be0976a76aebe54d69d16966b3bea75&query=marvel",
       elencoFilm: []
     }
   },
