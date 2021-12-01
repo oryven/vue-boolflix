@@ -1,10 +1,5 @@
 <template>
   <section>
-    
-    <div>v-for="film, i in elencoFilm" 
-    :key="i"
-    :details="film"
-    </div>
 
   </section>
 </template>
@@ -13,15 +8,16 @@
 // import axios from "axios";
 
 export default {
-  name: 'MyMain',
+  name: 'Film',
   props: {
-   elencoFilm: Array
+   film: Object
   },
   data (){
     return {
        
     }   
   },
+
 
 }
 </script>
