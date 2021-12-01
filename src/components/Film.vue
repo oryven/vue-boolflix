@@ -1,11 +1,16 @@
 <template>
   <section>
+    <div>{{details.title}}</div>
 
+    <div>{{details.original_title}}</div>
+
+    <div>{{details.original_language}}</div>
+
+    <div>{{details.vote_average}}</div>
   </section>
 </template>
 
 <script>
-// import axios from "axios";
 
 export default {
   name: 'Film',

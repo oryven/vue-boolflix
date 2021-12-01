@@ -1,19 +1,22 @@
 <template>
   <section>
-    
-    <div>v-for="film, i in elencoFilm" 
+
+    <film>v-for="film, i in elencoFilm" 
     :key="i"
     :details="film"
-    </div>
+    </film>
 
   </section>
 </template>
 
 <script>
-// import axios from "axios";
 
+import Film from '@/components/Film.vue'
 export default {
   name: 'MyMain',
+  components: {
+    Film
+  },
   props: {
    elencoFilm: Array
   },
