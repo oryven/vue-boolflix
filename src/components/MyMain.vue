@@ -1,23 +1,34 @@
 <template>
+  <section>
+    <div class="movies">
+      <Film v-for="film, i in elencoFilm" 
+      :key="i"
+      :details="film"/>
+    </div>
 
-  <div class="movies">
-    <Film v-for="film, i in elencoFilm" 
-    :key="i"
-    :details="film"/>
-  </div>
-    
+    <div>
+      <Serie v-for="serie, i in elencoSerie" 
+      :key="i"
+      :details="film"/>
+    </div>
+      
+  </section>
 </template>
 
 <script>
 
 import Film from '@/components/Film.vue'
+import Serie from '@/components/Serie.vue'
+
 export default {
   name: 'MyMain',
   components: {
-    Film
+    Film,
+    Serie
   },
   props: {
-   elencoFilm: Array
+   elencoFilm: Array,
+   elencoSerie: Array
   },
   data (){
     return {
