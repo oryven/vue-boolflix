@@ -47,12 +47,14 @@ methods:{
 <style scoped lang="scss">
   .scheda-film {
     text-align: center;
-    border: 1px solid black;
-    width: calc(100% / 5 - 10px);
-    margin: 20px 5px;
+    // border: 1px solid black;
+    width: calc(100% / 6 - 40px);
+    margin: 20px 20px;
+    background: black;
+    color: #e50913;
     .logo-netflix{
         width: 185px;
-        height: 272px;
+        // height: 272px;
     }
   }
 

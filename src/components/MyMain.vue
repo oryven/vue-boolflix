@@ -42,7 +42,7 @@ export default {
 section{
 
 height: calc(100vh - 80px) ;
-  background-color: lightgray;
+  background-color: #56050c;
   overflow-y: scroll;
 .movies, .series {
   display: flex;
