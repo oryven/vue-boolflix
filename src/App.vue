@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Myheader @sceltaFilm="cambioFilm"/>
-    <MyMain :elencoFilm="elencoFilm + elencoSerie"/>
+    <MyMain :elencoFilm='elencoFilm' :elencoSerie="elencoSerie"/>
   </div>
 </template>
 

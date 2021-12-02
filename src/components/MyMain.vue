@@ -2,16 +2,15 @@
   <section>
     <div class="movies">
       <Film v-for="film, i in elencoFilm" 
-      :key="i"
+      :key="film+i"
       :details="film"/>
     </div>
 
     <div>
       <Serie v-for="serie, i in elencoSerie" 
-      :key="i"
+      :key="serie+i"
       :details="film"/>
-    </div>
-      
+    </div>      
   </section>
 </template>
 
@@ -44,8 +43,8 @@ export default {
 .movies {
   display: flex;
   flex-wrap:wrap ;
-        height: 100vh;
-        background-color: lightgray;
-    }
+  height: 100vh;
+  background-color: lightgray;
+  }
 
 </style>

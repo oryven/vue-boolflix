@@ -2,7 +2,7 @@
   <section>
 
       <div class="scheda-serie">
-
+        <h2>Serie</h2>
         <div>{{details.title}}</div>
         
         <div>{{details.original_title}}</div>
@@ -18,7 +18,7 @@
 <script>
 
 export default {
-  name: 'Film',
+  name: 'Serie',
   props: {
    details: Object
   },
