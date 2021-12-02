@@ -4,7 +4,9 @@
         <h2>Film</h2>
         <div>{{details.name}}</div>
 
-        <img :src="ImgUrl + details.poster_path">
+        <img class="logo-netflix" v-if="details.poster_path === null" :src="imgnetUrl" alt="">
+
+        <img v-else :src="ImgUrl + details.poster_path">
         
         <div>{{details.original_title}}</div>
 
@@ -24,7 +26,8 @@ export default {
   },
   data (){
     return {
-      ImgUrl: "https://image.tmdb.org/t/p/w185"
+      ImgUrl: "https://image.tmdb.org/t/p/w185",
+      imgnetUrl:"https://www.losbagliato.it/wp-content/uploads/2021/07/copertina-netflix-23-giugno-960x960.png"
     }   
   },
 methods:{
@@ -47,6 +50,10 @@ methods:{
     border: 1px solid black;
     width: calc(100% / 5 - 10px);
     margin: 20px 5px;
+    .logo-netflix{
+        width: 185px;
+        height: 272px;
+    }
   }
 
 </style>
