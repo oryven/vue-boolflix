@@ -4,6 +4,7 @@
       <div>
         <input type="text" placeholder="Cerca un film"  v-model="testoUtente">
         <button @click="$emit('sceltaFilm', testoUtente)">Cerca</button>
+        <!-- <button @click="console.log('prova')">Cerca</button> -->
       </div>
       
   </header>
@@ -14,7 +15,7 @@
 export default {
   name: 'Myheader',
   props: {
-    msg: String
+      
   },
   data (){
     return {

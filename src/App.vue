@@ -18,30 +18,28 @@ export default {
   },
   data(){
     return {
-      titFilm: "",
-      apiUrl: "https://api.themoviedb.org/3/search/movie?api_key=9be0976a76aebe54d69d16966b3bea75&query=marvel",
+      titoloFilm: "",
+      query: "&query=",
+      lingua: "&language=it-IT",
+      apiUrl: "https://api.themoviedb.org/3/search/movie?api_key=9be0976a76aebe54d69d16966b3bea75",
       elencoFilm: []
     }
   },
 
-   created(){
-    this.schedaFilm()
-  },
-
   methods: {
       cambioFilm(film) {
-      this.titFilm = film;
+      this.titoloFilm = film;
+      axios
+      .get(this.apiUrl + this.lingua + this.query + this.titoloFilm )
+      .then((result) => {
+      this.elencoFilm = result.data.results
+      console.log(result);
+      })
     },
 
-    schedaFilm(){
-      axios
-        .get(this.apiUrl + this.titFilm)
-        .then((result) => {
-        this.elencoFilm = result.data.results
-        console.log(result);
-      })
+     
     }
-  }
+  
 }
 </script>
 
@@ -50,7 +48,6 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
 }
 
 * {

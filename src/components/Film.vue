@@ -2,6 +2,9 @@
   <section>
 
       <div class="scheda-film">
+
+        <div>{{details.title}}</div>
+        
         <div>{{details.original_title}}</div>
 
         <div>{{details.original_language}}</div>
