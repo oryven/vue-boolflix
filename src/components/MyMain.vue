@@ -2,14 +2,14 @@
   <section>
     <div class="movies">
       <Film v-for="film, i in elencoFilm" 
-      :key="film+i"
+      :key="film.title+i"
       :details="film"/>
     </div>
 
-    <div>
+    <div class="series">
       <Serie v-for="serie, i in elencoSerie" 
-      :key="serie+i"
-      :details="film"/>
+      :key="serie.name+i"
+      :details="serie"/>
     </div>      
   </section>
 </template>
@@ -34,17 +34,19 @@ export default {
        
     }   
   },
-
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-.movies {
+section{
+
+height: calc(100vh - 80px) ;
+  background-color: lightgray;
+  overflow-y: scroll;
+.movies, .series {
   display: flex;
   flex-wrap:wrap ;
-  height: 100vh;
-  background-color: lightgray;
   }
-
+}
 </style>

@@ -1,9 +1,10 @@
 <template>
-  <section>
 
       <div class="scheda-film">
         <h2>Film</h2>
-        <div>{{details.title}}</div>
+        <div>{{details.name}}</div>
+
+        <img :src="ImgUrl + details.poster_path">
         
         <div>{{details.original_title}}</div>
 
@@ -12,7 +13,6 @@
         <div>{{details.vote_average}}</div>
       </div>
     
-  </section>
 </template>
 
 <script>
@@ -24,7 +24,7 @@ export default {
   },
   data (){
     return {
-       
+      ImgUrl: "https://image.tmdb.org/t/p/w185"
     }   
   },
 methods:{
@@ -42,11 +42,11 @@ methods:{
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-section {
-    height: 50px;
-    .scheda-film {
-      border: 1px solid black;
-    }
-}
+  .scheda-film {
+    text-align: center;
+    border: 1px solid black;
+    width: calc(100% / 5 - 10px);
+    margin: 20px 5px;
+  }
 
 </style>

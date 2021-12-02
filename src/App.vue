@@ -29,26 +29,28 @@ export default {
   },
 
   methods: {
-      cambioFilm(film) {
-      this.titoloFilm = film;
-
+    getFilms() {
       axios
       .get(this.apiUrl + this.lingua + this.query + this.titoloFilm )
       .then((result) => {
-      this.elencoFilm = result.data.results
-      console.log(result);
+        this.elencoFilm = result.data.results
+        console.log(result);
       })
-
+    },
+    getSeries() {
       axios
       .get(this.apiSerie + this.lingua + this.query + this.titoloFilm)
       .then((result) => {
-      this.elencoSerie = result.data.results
-      console.log(result);
+        this.elencoSerie = result.data.results
+        console.log(result);
       })
+    },
+    cambioFilm(film) {
+      this.titoloFilm = film;
+      this.getFilms();
+      this.getSeries();
     },  
-
   }
-  
 }
 </script>
 
