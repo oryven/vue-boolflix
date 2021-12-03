@@ -2,13 +2,13 @@
   <section>
     <div class="movies">
       <Film v-for="film, i in elencoFilm" 
-      :key="film.title+i"
+      :key="i"
       :details="film"/>
     </div>
 
     <div class="series">
-      <Serie v-for="serie, i in elencoSerie" 
-      :key="serie.name+i"
+      <Serie v-for="serie, j in elencoSerie" 
+      :key="j"
       :details="serie"/>
     </div>      
   </section>
