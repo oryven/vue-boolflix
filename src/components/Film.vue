@@ -55,25 +55,20 @@ methods:{
 <style scoped lang="scss">
   .scheda-film {
     position: relative;
-    text-align: center;
     width: calc(100% / 4 - 10px);
     height: 450px;
     margin: 20px 5px;
     color: #e50913;
-    margin-bottom: 20px;
     .container-details {
       padding: 10px;
       width: 100%;
       height: 100%;
-      overflow-y: hidden;
+      overflow-y:scroll;
     }
     .copertina {
       position: absolute;
       width: 100%;
       height: 100%;
-    }
-    .copertina img:hover {
-      display: none;
     }
     .bandiera {
       width: 30px;
@@ -83,5 +78,8 @@ methods:{
         // height: 272px;
     }
   }
+  .scheda-film:hover img{
+      display:none;
+    }
 
 </style>
