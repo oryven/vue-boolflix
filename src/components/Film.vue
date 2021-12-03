@@ -14,6 +14,8 @@
         
       <div>{{details.original_title}}</div>
 
+      <div>{{details.overview}}</div>
+
       <img class="bandiera" :src="bandiera()">
 
       <div>{{details.vote_average}}</div>
@@ -32,7 +34,7 @@ export default {
   },
   data (){
     return {
-      ImgUrl: "https://image.tmdb.org/t/p/w185",
+      ImgUrl: "https://image.tmdb.org/t/p/w300",
       imgnetUrl:"https://www.losbagliato.it/wp-content/uploads/2021/07/copertina-netflix-23-giugno-960x960.png"
     }   
   },
@@ -43,7 +45,7 @@ methods:{
       }else if(this.details.original_language === 'en'){
         return "https://th.bing.com/th/id/R.8a8a985a6266b52f32e326ef17603955?rik=uoYiPLaWj9Yt0g&riu=http%3a%2f%2fwww.rgledhill.co.uk%2fimages%2fgb_flag.gif&ehk=IYDSLs30Co0xTYL1Zh9%2bhzwBPjI3S2IfGi5SQdjVkro%3d&risl=&pid=ImgRaw&r=0"
       }else 
-      return "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/International_Flag_of_Planet_Earth.svg/1280px-International_Flag_of_Planet_Earth.svg.png"
+        return "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/International_Flag_of_Planet_Earth.svg/1280px-International_Flag_of_Planet_Earth.svg.png"
     }
   }
 }
@@ -54,28 +56,25 @@ methods:{
   .scheda-film {
     position: relative;
     text-align: center;
-    width: calc(100% / 6 - 10px);
-    height: 300px;
+    width: calc(100% / 4 - 10px);
+    height: 450px;
     margin: 20px 5px;
     color: #e50913;
+    margin-bottom: 20px;
     .container-details {
-      display: none;
-      background: black;
+      padding: 10px;
       width: 100%;
       height: 100%;
+      overflow-y: hidden;
     }
     .copertina {
       position: absolute;
       width: 100%;
       height: 100%;
     }
-    .copertina:hover {
+    .copertina img:hover {
       display: none;
     }
-
-    .copertina:hover .container-details {
-    display: block;
-}
     .bandiera {
       width: 30px;
     }
