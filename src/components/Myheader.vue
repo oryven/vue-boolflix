@@ -34,7 +34,7 @@ header {
     align-items: center;
     padding: 0 20px 0 20px;
     h1 {
-        color : red;
+        color : #e50913;
     }
     input {
         height: 30%;
