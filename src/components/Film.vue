@@ -2,20 +2,23 @@
 
   <div class="scheda-film">
         
-    <div>
-    <img class="logo-netflix" v-if="details.poster_path === null" :src="imgnetUrl" alt="">
-    <img v-else :src="ImgUrl + details.poster_path">
+    <div class="copertina">
+      <img class="logo-netflix" v-if="details.poster_path === null" :src="imgnetUrl" alt="">
+      <img v-else :src="ImgUrl + details.poster_path">
     </div>
+
+    <div class="container-details">
+      <h2>Film</h2>
+
+      <div>{{details.name}}</div>
         
-    <h2>Film</h2>
+      <div>{{details.original_title}}</div>
 
-    <div>{{details.name}}</div>
-        
-    <div>{{details.original_title}}</div>
+      <img class="bandiera" :src="bandiera()">
 
-    <img class="bandiera" :src="bandiera()">
-
-    <div>{{details.vote_average}}</div>
+      <div>{{details.vote_average}}</div>
+    </div>   
+    
   </div>
     
 </template>
@@ -49,12 +52,30 @@ methods:{
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
   .scheda-film {
+    position: relative;
     text-align: center;
-    // border: 1px solid black;
     width: calc(100% / 6 - 10px);
+    height: 300px;
     margin: 20px 5px;
-    background: black;
     color: #e50913;
+    .container-details {
+      display: none;
+      background: black;
+      width: 100%;
+      height: 100%;
+    }
+    .copertina {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+    .copertina:hover {
+      display: none;
+    }
+
+    .copertina:hover .container-details {
+    display: block;
+}
     .bandiera {
       width: 30px;
     }
